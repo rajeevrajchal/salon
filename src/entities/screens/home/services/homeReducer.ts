@@ -1,7 +1,7 @@
 import * as actionTypes from './homeType';
 import { HomeStateInterface, FacilityInterface } from '../interface/HomeInterface';
 
-const initialState = {} as FacilityInterface;
+const initialState = {} as HomeStateInterface;
 
 export default (state = initialState, action: HomeStateInterface) => {
   const { type, facilities } = action;

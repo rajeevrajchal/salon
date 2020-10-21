@@ -6,6 +6,7 @@ import { closeModal } from './service/appModalAction';
 import layout from '../../../assets/styles/layout';
 import AppIconButton from '../AppIconButton';
 import typography from '../../../assets/styles/typography';
+import appModalReducer from './service/appModalReducer';
 
 interface AppModalInterface {
   children: React.ReactNode;
@@ -13,8 +14,8 @@ interface AppModalInterface {
 
 const AppModal: React.FC<AppModalInterface> = (props) => {
   const { children } = props;
+  const isOpenModal: boolean = useSelector((state: RootState) => state.appModalReducer.isOpenModal);
 
-  const { isOpenModal } = useSelector((state: RootState) => state.appModalReducer);
   const dispatch = useDispatch<Dispatch<any>>();
   return (
     <Modal

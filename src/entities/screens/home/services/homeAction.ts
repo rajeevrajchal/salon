@@ -1,7 +1,6 @@
 import { FacilityInterface } from '../interface/HomeInterface';
 import * as actionType from './homeType';
 import { Dispatch } from 'react';
-const mockFacility = require('../mockFacility.json');
 
 const getFacility = (payload: FacilityInterface[]) => {
   return {
@@ -11,6 +10,6 @@ const getFacility = (payload: FacilityInterface[]) => {
 };
 
 export const fetchFacilityData = () => (dispatch: Dispatch<any>) => {
-  const data = mockFacility;
+  const data: FacilityInterface[] = require('../mockFacility.json');
   dispatch(getFacility(data));
 };

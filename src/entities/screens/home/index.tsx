@@ -27,16 +27,17 @@ const Home: React.FC<HomeScreenProps> = (props) => {
   const { navigation } = props;
   const [keyword, setKeyword] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-  const dispatch = useDispatch<Dispatch<any>>();
+  const dispatch = useDispatch<Dispatch<RootState>>();
 
-  const { facilities } = useSelector((state: RootState) => state.homeReducer);
+  const facilities: FacilityInterface[] = useSelector(
+    (state: RootState) => state.homeReducer.facilities,
+  );
 
   useEffect(() => {
     setLoading(true);
     dispatch(fetchFacilityData());
     setLoading(false);
   }, []);
-
   console.log(keyword);
 
   return (
@@ -48,7 +49,6 @@ const Home: React.FC<HomeScreenProps> = (props) => {
             <Category />
           </View>
         </View>
-
         <View>
           <Text style={[typography.title, layout.containerPadding]}> Talents </Text>
           <ScrollView

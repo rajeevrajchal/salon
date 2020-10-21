@@ -5,7 +5,6 @@ import { mainNavigation } from '../../../../navigation/navigationInterface';
 import layout from '../../../../assets/styles/layout';
 import styles from './styles';
 import AppIcon from '../../../common/AppIcon';
-
 const MainHeader: React.FC = () => {
   const navigation = useNavigation<mainNavigation>();
   return (

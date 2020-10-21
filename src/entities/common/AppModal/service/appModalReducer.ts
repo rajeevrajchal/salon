@@ -6,7 +6,9 @@ export interface ModalState {
   type?: string;
 }
 
-const initialState = {} as ModalState;
+const initialState = {
+  isOpenModal: false,
+} as ModalState;
 
 export default (state = initialState, action: ModalState) => {
   switch (action.type) {
@@ -17,7 +19,11 @@ export default (state = initialState, action: ModalState) => {
         mode: action.mode,
       };
     case actionTypes.CLOSE_MODAL:
-      return initialState;
+      return {
+        ...state,
+        isOpenModal: false,
+        mode: '',
+      };
     default:
       return state;
   }
