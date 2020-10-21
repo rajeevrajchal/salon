@@ -1,8 +1,3 @@
-export {
-    openModal,
-    closeModal
-} from '../entities/common/AppModal/service/appModalAction'
+export { openModal, closeModal } from '../entities/common/AppModal/service/appModalAction';
 
-export {
-
-} from '../entities/screens/home/services/homeAction'
+export {} from '../entities/screens/home/services/homeAction';
